@@ -26,6 +26,7 @@ function getArticles() : array{
     ];
 }*/
 
+
 	function addArticle(string $title, string $content) : bool{
 		$articles = getArticles();
 
@@ -54,8 +55,11 @@ function getArticles() : array{
 		return false;
 	}
 
-	function saveArticles(array $articles) : bool{
-		file_put_contents('db/articles.json', json_encode($articles));
-		return true;
-	}
+	    function saveArticles(array $articles) : bool
+        {
+            file_put_contents('db/articles.json', json_encode($articles));
+            return true;
+        }
+
+
 	/* end --- black box */

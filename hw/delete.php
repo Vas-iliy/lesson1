@@ -1,13 +1,10 @@
 <?php
 
 	include_once('functions.php');		
+	if ($_GET) {
+	    $delete = removeArticle($_GET['id']);
+    }
 
-	/*
-		your code here
-		get id from url
-		check id
-		call removeArticle
-	*/
 ?>
 Message about result
 <hr>
