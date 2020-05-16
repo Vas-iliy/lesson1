@@ -12,6 +12,8 @@
 		<div class="article">
 			<h1><?=$post['title']?></h1>
 			<div><?=$post['content']?></div>
+            <hr>
+            <a href="redactor.php?id=<?=$id?>">fix</a>
 			<hr>
 			<a href="delete.php?id=<?=$id?>">Remove</a>
 		</div>

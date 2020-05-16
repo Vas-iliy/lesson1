@@ -6,25 +6,6 @@
 function getArticles() : array{
     return json_decode(file_get_contents('db/articles.json'), true);
 }
-/*function getArticles () {
-    return [
-        '1' => [
-            'id' => 1,
-            'title' => 'Статья 1',
-            'content' => 'Ну, тут говориться про то что ты пидор'
-        ],
-        '2' => [
-            'id' => 2,
-            'title' => 'статья 2',
-            'content' => 'Ну, тут написано что ты любишь пить пиво'
-        ],
-        '5' => [
-            'id' => 5,
-            'title' => 'статья 5',
-            'content' => 'Ну, тут написано что тебе скучно'
-        ]
-    ];
-}*/
 
 
 	function addArticle(string $title, string $content) : bool{
@@ -54,6 +35,21 @@ function getArticles() : array{
 		
 		return false;
 	}
+
+	function refactorArticle (int $id, $title, $content): bool {
+
+        $articles = getArticles();
+
+        $articles[$id] = [
+            'id' => $id,
+            'title' => $title,
+            'content' => $content
+        ];
+
+        saveArticles($articles);
+        return true;
+
+    }
 
 	    function saveArticles(array $articles) : bool
         {

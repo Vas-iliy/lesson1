@@ -5,6 +5,9 @@
 	    $delete = removeArticle($_GET['id']);
     }
 
+	if ($delete) {
+	    header('Location:index.php');
+    }
 ?>
 Message about result
 <hr>
